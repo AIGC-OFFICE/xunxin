@@ -458,10 +458,6 @@ p {
 }
 
 /* 视觉一致性补充 */
-.map-embed iframe{
-    border-radius: .5rem;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
 .business-card .card-footer{
     padding-top: .875rem;
     padding-bottom: .875rem;
