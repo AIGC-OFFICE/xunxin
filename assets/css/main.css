@@ -1154,6 +1154,20 @@ p {
     text-decoration: underline;
 }
 
+/* 联系表单与联系信息等高、按钮底部对齐 */
+#contact .row.g-5{align-items:stretch}
+.contact-form-container, .contact-info{display:flex;flex-direction:column;height:100%}
+.contact-form{display:flex;flex-direction:column;flex:1}
+.contact-form .row.g-3{display:flex;flex-direction:column;flex:1}
+.contact-form #contactMessage{flex:1 1 auto;min-height:220px;resize:vertical}
+.contact-form .row.g-3 > .col-12:last-child{margin-top:auto}
+
+@media (max-width: 991.98px){
+    /* 在小屏设备回到普通流，避免布局问题 */
+    .contact-form .row.g-3{display:block}
+    .contact-form .row.g-3 > .col-12:last-child{margin-top:0}
+}
+
 /* 响应式媒体查询 */
 @media (max-width: 767.98px) {
     :root {
