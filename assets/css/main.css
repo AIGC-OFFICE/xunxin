@@ -1,4 +1,4 @@
-/* 循鑫再生资源企业落地页主样式 */
+/* 循鑫（天津）再生资源有限公司企业落地页主样式 */
 
 /* 全局变量定义 */
 :root {
@@ -454,8 +454,78 @@ p {
 
 .hero-title .text-success {
     color: #4CAF50 !important; /* 使用更亮的绿色 */
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important; /* 增强"循鑫再生资源"文字阴影 */
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important; /* 增强"循鑫（天津）再生资源"文字阴影 */
 }
+
+/* 视觉一致性补充 */
+.map-embed iframe{
+    border-radius: .5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.business-card .card-footer{
+    padding-top: .875rem;
+    padding-bottom: .875rem;
+}
+.btn-outline-success:focus, .btn-success:focus{
+    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, 0.25);
+    outline: none;
+}
+.hero-title .text-success{
+    text-shadow: none; /* 保持标题清晰 */
+}
+.cards-consistent{
+    border-radius: .75rem;
+}
+
+/* 业务卡片视觉一致性 */
+.business-card{
+    border-radius: .75rem;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.business-card .card-title{
+    font-weight: 700;
+    font-size: 1rem;
+}
+.business-card .card-body{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+@media (max-width: 576px){
+    .hero-title{font-size:1.6rem}
+    .hero-subtitle{font-size:.95rem}
+}
+
+/* 导航栏悬停与激活效果 */
+#navbar .nav-link{
+    transition: color .18s ease, transform .12s ease;
+    color: rgba(255,255,255,0.9);
+    padding: .45rem .75rem;
+}
+#navbar .nav-link:hover{
+    color: #ffffff;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+#navbar .nav-link.active{
+    color: var(--bs-success);
+    font-weight: 700;
+}
+#navbar .nav-link.active::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+    width: 36%;
+    height: 3px;
+    background: var(--bs-success);
+    border-radius: 2px;
+}
+
+/* 确保导航项相对定位以支撑 ::after */
+#navbar .nav-item{position: relative;}
 
 .hero-subtitle .text-white-50 {
     color: rgba(255, 255, 255, 0.95) !important; /* 提高副标题文字透明度 */

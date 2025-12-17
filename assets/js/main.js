@@ -1,4 +1,4 @@
-// 循鑫再生资源企业落地页主JavaScript文件
+// 循鑫（天津）再生资源有限公司企业落地页主JavaScript文件
 
 // 全局变量
 const XunXin = {
@@ -18,12 +18,13 @@ const XunXin = {
     init: function() {
         this.initAOS();
         this.initNavbar();
+        this.initSectionHighlight(); // 激活板块高亮
         this.initSmoothScroll();
         this.initContactForm();
         this.initLazyLoading();
         this.initBackToTop();
         this.initHeroParticles(); // 初始化粒子效果
-        console.log('循鑫再生资源网站初始化完成');
+        console.log('循鑫（天津）再生资源有限公司网站初始化完成');
     },
     
     // 初始化AOS动画
@@ -88,6 +89,40 @@ const XunXin = {
                     }
                 }
             });
+        });
+    },
+
+    // 导航栏 - 高亮当前页面板块（Scrollspy-like）
+    initSectionHighlight: function() {
+        const navLinks = Array.from(document.querySelectorAll('.navbar-nav .nav-link'));
+        const sections = Array.from(document.querySelectorAll('section[id]'));
+        if (!navLinks.length || !sections.length) return;
+
+        const updateActive = () => {
+            const scrollPos = window.scrollY + 90; // 补偿导航栏高度
+            let currentSection = sections[0];
+
+            for (const sec of sections) {
+                if (sec.offsetTop <= scrollPos) {
+                    currentSection = sec;
+                }
+            }
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href || !href.startsWith('#')) return;
+                const isActive = href === `#${currentSection.id}`;
+                link.classList.toggle('active', isActive);
+            });
+        };
+
+        window.addEventListener('scroll', this.throttle(updateActive, 120));
+        // 初始执行
+        updateActive();
+
+        // 点击时微小延迟后确保高亮正确
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => setTimeout(() => updateActive(), 300));
         });
     },
     
@@ -451,7 +486,7 @@ function submitContactForm() {
     }
     
     // 构建邮件内容
-    const subject = '循鑫再生资源 - 新的咨询表单';
+    const subject = '循鑫（天津）再生资源有限公司 - 新的咨询表单';
     const body = `姓名：${name}
 联系电话：${phone}
 邮箱地址：${email || '未提供'}

@@ -1,8 +1,8 @@
-# 循鑫再生资源网站 Cloudflare Pages 部署设计文档
+# 循鑫（天津）再生资源有限公司网站 Cloudflare Pages 部署设计文档
 
 ## 概述
 
-本设计文档详细描述了循鑫再生资源企业落地页在 Cloudflare Pages 平台的部署架构、配置策略和优化方案。项目采用静态网站架构，利用 Cloudflare 的全球 CDN 网络实现高性能访问。
+本设计文档详细描述了循鑫（天津）再生资源有限公司企业落地页在 Cloudflare Pages 平台的部署架构、配置策略和优化方案。项目采用静态网站架构，利用 Cloudflare 的全球 CDN 网络实现高性能访问。
 
 ## 架构设计
 
@@ -120,10 +120,10 @@ http://xunxin-resources.com/* https://xunxin-resources.com/:splat 301!
 
 ```javascript
 const siteMetadata = {
-  title: "循鑫再生资源有限公司 - 专业废旧金属回收_二手电器回收_珠宝回收_全国服务",
-  description: "循鑫再生资源专业提供全国废旧金属、二手电器、珠宝首饰、废旧机械回收及钢结构拆除服务，价格公道，上门回收，即时结算。",
+  title: "循鑫（天津）再生资源有限公司 - 专业废旧金属回收_二手电器回收_珠宝回收_全国服务",
+  description: "循鑫（天津）再生资源有限公司专业提供全国废旧金属、二手电器、珠宝首饰、废旧机械回收及钢结构拆除服务，价格公道，上门回收，即时结算。",
   keywords: "废品回收,金属回收,电器回收,珠宝回收,钢结构拆除,再生资源,全国服务",
-  author: "循鑫再生资源有限公司",
+  author: "循鑫（天津）再生资源有限公司",
   url: "https://your-domain.pages.dev",
   image: "/assets/images/logo/横向logo.svg",
   locale: "zh_CN"
@@ -136,7 +136,7 @@ const siteMetadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "循鑫再生资源有限公司",
+  "name": "循鑫（天津）再生资源有限公司",
   "description": "专注于资源再生与循环利用的综合型企业",
   "url": "https://your-domain.pages.dev",
   "telephone": "13114908387",

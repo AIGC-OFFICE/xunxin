@@ -1,8 +1,8 @@
-# 循鑫再生资源网站 Cloudflare Pages 部署需求文档
+# 循鑫（天津）再生资源有限公司网站 Cloudflare Pages 部署需求文档
 
 ## 项目简介
 
-循鑫再生资源企业落地页是一个基于 HTML5、CSS3、JavaScript 和 Bootstrap 5 构建的静态网站，需要部署到 Cloudflare Pages 平台以实现高性能的全球访问。
+循鑫（天津）再生资源有限公司企业落地页是一个基于 HTML5、CSS3、JavaScript 和 Bootstrap 5 构建的静态网站，需要部署到 Cloudflare Pages 平台以实现高性能的全球访问。
 
 ## 需求分析
 
