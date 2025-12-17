@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://SITE_URL/sitemap.xml
+
+# 如果需要禁止某些抓取路径，请在此处添加
+# 如：Disallow: /private/

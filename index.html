@@ -19,11 +19,23 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/logo/横向logo.svg">
     
-    <!-- SEO and Open Graph -->
+    <!-- SEO and Open Graph (优化以利于百度收录) -->
+    <!-- 说明：将下方的 SITE_URL 替换为您的正式域名，例如 https://www.yourdomain.com -->
+    <link rel="canonical" href="https://SITE_URL/"> <!-- 请替换为正式域名 -->
+    <meta name="robots" content="index,follow">
+    <meta name="baidu-site-verification" content="PUT_YOUR_BAIDU_VERIFY_TOKEN_HERE" /> <!-- 如有百度站长验证码请填写 -->
+
+    <!-- 预连接：提升资源加载速度（有助于SEO） -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Open Graph -->
     <meta property="og:title" content="循鑫（天津）再生资源有限公司 - 专业回收服务">
     <meta property="og:description" content="专业提供废旧金属、电器、珠宝回收及钢结构拆除服务">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://SITE_URL/assets/images/logo/横向logo.svg"> <!-- 替换为线上 logo URL -->
+    <meta name="twitter:card" content="summary_large_image">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -42,7 +54,42 @@
         },
         "openingHours": "Mo-Su 08:00-18:00",
         "priceRange": "$$",
-        "email": "xunxin2025@126.com"
+        "email": "xunxin2025@126.com",
+        "logo": "https://SITE_URL/assets/images/logo/横向logo.svg",
+        "sameAs": [
+            "https://weixin.qq.com/", /* 可替换为企业微信/社交链接 */
+            "https://www.example.com" /* 其他社交/官方链接 */
+        ]
+    }
+    </script>
+
+    <!-- 额外的结构化数据：WebSite 与 Breadcrumb，提高索引质量 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "循鑫（天津）再生资源有限公司",
+        "url": "https://SITE_URL/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://SITE_URL/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://SITE_URL/"
+            }
+        ]
     }
     </script>
 </head>

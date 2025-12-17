@@ -126,6 +126,15 @@
 
 ## 待完成事项
 
+### SEO 优化（已应用基础改动）
+- 添加 `canonical` 链接（请替换为真实 SITE_URL）
+- 增加 `meta name="robots" content="index,follow"` 与百度验证 meta 占位
+- 添加 `preconnect` 以加速 CDN 资源加载
+- 丰富 JSON-LD（LocalBusiness 增加 logo、sameAs；新增 WebSite 与 BreadcrumbList）
+- 新增 `sitemap.xml` 与 `robots.txt`（请替换 SITE_URL 并提交 sitemap 到百度站长）
+
+> 注意：需要将 `https://SITE_URL/` 替换为实际上线域名并在百度站长平台提交 sitemap、通过“站点验证”上线验证；我可以代为提交或指导具体步骤。
+
 ### 内容补充
 1. **联系信息**: 需要提供真实的电话、地址、邮箱
 2. **公司LOGO**: 需要设计和提供各种规格的LOGO文件
