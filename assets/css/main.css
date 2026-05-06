@@ -420,33 +420,105 @@ p {
 html, body { overflow-x: hidden; touch-action: pan-y; }
 .hero-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--professional-blue) 100%);
+    background: #0a0a0a; /* 兜底深色，carousel 加载前/切换瞬间不透出色块 */
     color: var(--text-white);
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 6rem 0; /* 增加内边距 */
+    padding: 6rem 0;
 }
 
-.hero-background {
+/* 全屏背景轮播 */
+.hero-carousel {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
+    z-index: 0;
+}
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item {
+    height: 100%;
+}
+.hero-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+/* fade 过渡 */
+.hero-carousel.carousel-fade .carousel-item {
+    transition: opacity 1.2s ease-in-out;
+}
+/* hero 控件：默认更隐蔽，hover hero 区域时变清晰 */
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+    width: 6%;
+    z-index: 4;
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+.hero-section:hover .hero-carousel .carousel-control-prev,
+.hero-section:hover .hero-carousel .carousel-control-next {
+    opacity: 0.8;
+}
+.hero-carousel .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: 1.4rem 1.4rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    background-position: center;
+}
+/* hero 指示器：底部居中，简洁圆点 */
+.hero-indicators {
+    z-index: 4;
+    margin-bottom: 1.5rem;
+}
+.hero-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 0;
+    margin: 0 6px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+.hero-indicators [data-bs-target].active {
+    background-color: #ffffff;
+    transform: scale(1.25);
 }
 
-/* 添加动态粒子效果 */
+/* 深色叠加，保证文字可读 */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background:
+        linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.25) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+}
+
+/* 动态粒子层 */
 .hero-particles {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 文字内容浮在最上 */
+.hero-content {
+    position: relative;
+    z-index: 3;
 }
 
 .particle {
@@ -824,12 +896,123 @@ html, body { overflow-x: hidden; touch-action: pan-y; }
     background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%); /* 钢结构拆除 - 红色 */
 }
 
-
+/* 业务卡片图片轮播（Bootstrap carousel 适配 200px 容器） */
+/* 关闭 ::before 占位色块——carousel 切换间隙会透出金/绿/红等纯色，改用深色兜底 */
+.card-img-container::before {
+    display: none;
+}
+.card-img-container {
+    background: #1f1f1f; /* 切换瞬间或 lazy 加载未到位时的兜底深色，避免色块闪烁 */
+}
+.card-img-container .carousel,
+.card-img-container .carousel-inner,
+.card-img-container .carousel-item {
+    height: 100%;
+}
+.card-img-container .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* fade 过渡比 slide 更流畅，且不与 hover scale 冲突 */
+.card-img-container .carousel-fade .carousel-item {
+    transition: opacity 0.6s ease-in-out;
+}
+/* 左右切换按钮：默认半透明，hover 卡片或控件时显示更清晰 */
+.card-img-container .carousel-control-prev,
+.card-img-container .carousel-control-next {
+    width: 12%;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 5;
+}
+.business-card:hover .carousel-control-prev,
+.business-card:hover .carousel-control-next {
+    opacity: 0.7;
+}
+.card-img-container .carousel-control-prev:hover,
+.card-img-container .carousel-control-next:hover {
+    opacity: 1;
+}
+.card-img-container .carousel-control-prev-icon,
+.card-img-container .carousel-control-next-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    background-position: center;
+}
+/* 触屏设备上始终显示控件 */
+@media (hover: none) {
+    .card-img-container .carousel-control-prev,
+    .card-img-container .carousel-control-next {
+        opacity: 0.6;
+    }
+}
 
 .card-title {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
+}
+
+/* 行业洞察卡片 */
+.insight-card {
+    border: 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.insight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+.insight-cover {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    background: #1f1f1f;
+}
+.insight-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.insight-card:hover .insight-cover img {
+    transform: scale(1.06);
+}
+.insight-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 999px;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.insight-card .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.45;
+    min-height: 2.9em;
+}
+.insight-card .card-title a {
+    color: #1c1c1c;
+    transition: color 0.2s ease;
+}
+.insight-card:hover .card-title a {
+    color: var(--primary-green, #2e7d32);
+}
+.insight-meta i {
+    color: #888;
+}
+.insight-meta {
+    letter-spacing: 0.02em;
 }
 
 .card-text {

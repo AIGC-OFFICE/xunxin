@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="循鑫（天津）再生资源有限公司专业提供全国废旧金属、二手电器、珠宝首饰、废旧机械回收及钢结构拆除服务，价格公道，上门回收，即时结算。">
-    <meta name="keywords" content="废品回收,金属回收,电器回收,珠宝回收,钢结构拆除,再生资源,全国服务">
-    <title>循鑫（天津）再生资源有限公司 - 专业废旧金属回收_二手电器回收_珠宝回收_全国服务</title>
+    <meta name="description" content="循鑫（天津）再生资源有限公司专注企业级再生资源回收：生产性废旧金属、企业IT资产合规报废、工业贵金属提取、废旧机械、再生资源、钢结构拆除等全国B2B回收服务。">
+    <meta name="keywords" content="生产性废旧金属回收,企业IT资产报废,办公设备报废,工业贵金属回收,废旧机械回收,钢结构拆除,工厂再生资源,B2B回收,全国企业服务">
+    <title>循鑫（天津）再生资源有限公司 - 企业级再生资源回收_废旧金属_IT资产报废_工业贵金属_全国B2B服务</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,8 +30,8 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="循鑫（天津）再生资源有限公司 - 专业回收服务">
-    <meta property="og:description" content="专业提供废旧金属、电器、珠宝回收及钢结构拆除服务">
+    <meta property="og:title" content="循鑫（天津）再生资源有限公司 - 企业级再生资源回收服务">
+    <meta property="og:description" content="面向工厂、企业、机构提供废旧金属、IT资产合规报废、工业贵金属、废旧机械与钢结构拆除回收一站式 B2B 解决方案">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:image" content="https://SITE_URL/assets/images/logo/横向logo.svg"> <!-- 替换为线上 logo URL -->
@@ -92,6 +92,55 @@
         ]
     }
     </script>
+
+    <!-- 行业洞察文章列表（Blog ItemList） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "循鑫行业洞察",
+        "description": "专业干货、合规指南、趋势分析 — 企业级再生资源管理的深度内容",
+        "url": "https://SITE_URL/#insights",
+        "publisher": {
+            "@type": "Organization",
+            "name": "循鑫（天津）再生资源有限公司",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://SITE_URL/assets/images/logo/横向logo.svg"
+            }
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "如何识别金属纯度：B 端采购的快速鉴别指南",
+                "datePublished": "2026-04-15",
+                "url": "https://SITE_URL/articles/metal-purity-identification-guide.html",
+                "image": "https://SITE_URL/assets/images/business/metal-recycling-3.webp"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "钢结构拆除工程中的安全风险规避方案",
+                "datePublished": "2026-04-22",
+                "url": "https://SITE_URL/articles/demolition-safety-risk-management.html",
+                "image": "https://SITE_URL/assets/images/business/steel-demolition-1.webp"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "企业废弃物合规处理指南：从分类到凭证全流程",
+                "datePublished": "2026-04-29",
+                "url": "https://SITE_URL/articles/enterprise-waste-compliance-guide.html",
+                "image": "https://SITE_URL/assets/images/business/appliance-recycling-2.webp"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "2026 年度废钢及主要金属价格趋势分析报告",
+                "datePublished": "2026-05-06",
+                "url": "https://SITE_URL/articles/2026-scrap-metal-price-trends.html",
+                "image": "https://SITE_URL/assets/images/business/metal-recycling-2.webp"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -126,6 +175,9 @@
                         <a class="nav-link" href="#process">服务流程</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#insights">行业洞察</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">联系我们</a>
                     </li>
                 </ul>
@@ -145,7 +197,33 @@
 
     <!-- 英雄横幅 -->
     <section id="hero" class="hero-section d-flex align-items-center">
-        <div class="hero-background"></div>
+        <!-- 全屏背景轮播 -->
+        <div id="heroCarousel" class="hero-carousel carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="assets/images/hero/hero-1.webp" alt="工业废金属回收作业实景" class="hero-slide">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="assets/images/hero/hero-2.webp" alt="企业数据中心 IT 资产合规报废" class="hero-slide" loading="lazy">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="assets/images/hero/hero-3.webp" alt="大型钢结构 / 厂房拆除现场" class="hero-slide" loading="lazy">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="上一张">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="下一张">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+            <div class="carousel-indicators hero-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="第 1 张"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="第 2 张"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="第 3 张"></button>
+            </div>
+        </div>
+        <!-- 深色叠加，保证文字可读 -->
+        <div class="hero-overlay"></div>
         <div class="hero-particles"></div>
         <div class="container hero-content">
             <div class="row align-items-center min-vh-100">
@@ -252,7 +330,7 @@
             <!-- 区块标题 -->
             <div class="section-title" data-aos="fade-up">
                 <h2>业务范围</h2>
-                <p class="subtitle">专业提供各类再生资源回收服务，推动循环经济发展</p>
+                <p class="subtitle">面向工厂、企业、机构的一站式再生资源回收与合规处置解决方案</p>
             </div>
             
             <div class="row g-4">
@@ -260,7 +338,25 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card business-card h-100">
                         <div class="card-img-container position-relative">
-                            <img src="assets/images/business/metal-recycling.webp" class="card-img-top" alt="金属回收" loading="lazy" onerror="this.style.opacity='0'">
+                            <div id="carousel-metal" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-inner h-100">
+                                    <div class="carousel-item active h-100">
+                                        <img src="assets/images/business/metal-recycling-1.webp" class="card-img-top" alt="生产性废旧金属回收 - 工业实景 1" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/metal-recycling-2.webp" class="card-img-top" alt="生产性废旧金属回收 - 工业实景 2" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/metal-recycling-3.webp" class="card-img-top" alt="生产性废旧金属回收 - 工业实景 3" loading="lazy">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-metal" data-bs-slide="prev" aria-label="上一张">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-metal" data-bs-slide="next" aria-label="下一张">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-primary">
@@ -282,52 +378,88 @@
                     </div>
                 </div>
                 
-                <!-- 二手旧电器回收 -->
+                <!-- 企业IT资产 / 办公设备合规报废 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card business-card h-100">
                         <div class="card-img-container position-relative">
-                            <img src="assets/images/business/appliance-recycling.webp" class="card-img-top" alt="电器回收" loading="lazy" onerror="this.style.opacity='0'">
+                            <div id="carousel-appliance" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5300">
+                                <div class="carousel-inner h-100">
+                                    <div class="carousel-item active h-100">
+                                        <img src="assets/images/business/appliance-recycling-1.webp" class="card-img-top" alt="企业IT资产合规报废 - 工业实景 1" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/appliance-recycling-2.webp" class="card-img-top" alt="企业IT资产合规报废 - 工业实景 2" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/appliance-recycling-3.webp" class="card-img-top" alt="企业IT资产合规报废 - 工业实景 3" loading="lazy">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-appliance" data-bs-slide="prev" aria-label="上一张">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-appliance" data-bs-slide="next" aria-label="下一张">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-primary">
-                                <i class="fas fa-plug me-2 text-info"></i>二手旧电器回收
+                                <i class="fas fa-server me-2 text-info"></i>企业IT资产 / 办公设备合规报废
                             </h5>
-                            <p class="card-text">环保回收废旧电器、办公设备、家用电器，规范拆解处理，减少电子废弃物污染。</p>
+                            <p class="card-text">面向企事业单位、数据中心、连锁机构提供服务器、网络设备、办公电脑及大型办公设备的合规报废、数据销毁与资产残值回收，全程留痕、出具凭证。</p>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>环保拆解处理</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>上门回收服务</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>减少环境污染</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>数据安全销毁（消磁/物理破碎）</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>资产清单与报废凭证</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>合规拆解 · 环保流向追溯</li>
                             </ul>
                         </div>
                         <div class="card-footer bg-transparent">
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">服务对象：企业家庭</small>
+                                <small class="text-muted">服务对象：企事业单位</small>
                                 <a href="#contact" class="btn btn-outline-success btn-sm">详细咨询</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 珠宝首饰回收 -->
+                <!-- 工业贵金属材料提取回收 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card business-card h-100">
                         <div class="card-img-container position-relative">
-                            <img src="assets/images/business/jewelry-recycling.webp" class="card-img-top" alt="珠宝回收" loading="lazy" onerror="this.style.opacity='0'">
+                            <div id="carousel-jewelry" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5600">
+                                <div class="carousel-inner h-100">
+                                    <div class="carousel-item active h-100">
+                                        <img src="assets/images/business/jewelry-recycling-1.webp" class="card-img-top" alt="工业贵金属材料提取回收 - 工业实景 1" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/jewelry-recycling-2.webp" class="card-img-top" alt="工业贵金属材料提取回收 - 工业实景 2" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/jewelry-recycling-3.webp" class="card-img-top" alt="工业贵金属材料提取回收 - 工业实景 3" loading="lazy">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-jewelry" data-bs-slide="prev" aria-label="上一张">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-jewelry" data-bs-slide="next" aria-label="下一张">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-primary">
-                                <i class="fas fa-ring me-2 text-warning"></i>珠宝首饰回收
+                                <i class="fas fa-flask me-2 text-warning"></i>工业贵金属材料提取回收
                             </h5>
-                            <p class="card-text">专业回收黄金、白银、铂金、钻石等贵重金属和珠宝，交易透明、公平，提供专业检测服务。</p>
+                            <p class="card-text">面向电子制造、PCB、半导体、电镀、催化剂等行业，回收含金 / 银 / 铂 / 钯 / 铑等工业贵金属的边角料、废液、废催化剂，按品位检测计价，提供完整票据。</p>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>专业检测评估</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>透明公平交易</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>即时现金结算</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>专业品位检测 · 透明计价</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>边角料 / 废液 / 废催化剂</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>对公结算 · 票据齐全</li>
                             </ul>
                         </div>
                         <div class="card-footer bg-transparent">
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">服务对象：个人企业</small>
+                                <small class="text-muted">服务对象：制造业 / 工厂</small>
                                 <a href="#contact" class="btn btn-outline-success btn-sm">详细咨询</a>
                             </div>
                         </div>
@@ -338,7 +470,25 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="card business-card h-100">
                         <div class="card-img-container position-relative">
-                            <img src="assets/images/business/machinery-recycling.webp" class="card-img-top" alt="机械回收" loading="lazy" onerror="this.style.opacity='0'">
+                            <div id="carousel-machinery" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4900">
+                                <div class="carousel-inner h-100">
+                                    <div class="carousel-item active h-100">
+                                        <img src="assets/images/business/machinery-recycling-1.webp" class="card-img-top" alt="废旧机械回收 - 工业实景 1" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/machinery-recycling-2.webp" class="card-img-top" alt="废旧机械回收 - 工业实景 2" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/machinery-recycling-3.webp" class="card-img-top" alt="废旧机械回收 - 工业实景 3" loading="lazy">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-machinery" data-bs-slide="prev" aria-label="上一张">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-machinery" data-bs-slide="next" aria-label="下一张">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-primary">
@@ -364,7 +514,25 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                     <div class="card business-card h-100">
                         <div class="card-img-container position-relative">
-                            <img src="assets/images/business/renewable-recycling.webp" class="card-img-top" alt="再生资源回收" loading="lazy" onerror="this.style.opacity='0'">
+                            <div id="carousel-renewable" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5200">
+                                <div class="carousel-inner h-100">
+                                    <div class="carousel-item active h-100">
+                                        <img src="assets/images/business/renewable-recycling-1.webp" class="card-img-top" alt="再生资源回收 - 工业实景 1" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/renewable-recycling-2.webp" class="card-img-top" alt="再生资源回收 - 工业实景 2" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/renewable-recycling-3.webp" class="card-img-top" alt="再生资源回收 - 工业实景 3" loading="lazy">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-renewable" data-bs-slide="prev" aria-label="上一张">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-renewable" data-bs-slide="next" aria-label="下一张">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-primary">
@@ -390,7 +558,25 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                     <div class="card business-card h-100">
                         <div class="card-img-container position-relative">
-                            <img src="assets/images/business/steel-demolition.webp" class="card-img-top" alt="钢结构拆除" loading="lazy" onerror="this.style.opacity='0'">
+                            <div id="carousel-steel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4700">
+                                <div class="carousel-inner h-100">
+                                    <div class="carousel-item active h-100">
+                                        <img src="assets/images/business/steel-demolition-1.webp" class="card-img-top" alt="钢结构拆除与回收 - 工业实景 1" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/steel-demolition-2.webp" class="card-img-top" alt="钢结构拆除与回收 - 工业实景 2" loading="lazy">
+                                    </div>
+                                    <div class="carousel-item h-100">
+                                        <img src="assets/images/business/steel-demolition-3.webp" class="card-img-top" alt="钢结构拆除与回收 - 工业实景 3" loading="lazy">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-steel" data-bs-slide="prev" aria-label="上一张">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-steel" data-bs-slide="next" aria-label="下一张">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-primary">
@@ -685,7 +871,7 @@
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
                         <h6 class="step-title">即时结算</h6>
-                        <p class="step-desc">回收完成后，即时现金结算，无拖欠</p>
+                        <p class="step-desc">回收完成后对公结算，票据齐全，可签订长期合作协议</p>
                     </div>
                 </div>
                 
@@ -767,6 +953,105 @@
         </div>
     </section>
 
+    <!-- 行业洞察 -->
+    <section id="insights" class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>行业洞察</h2>
+                <p class="subtitle">专业干货 · 合规指南 · 趋势分析 — 让企业再生资源管理更高效</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- 文章 1：金属纯度识别 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <article class="card insight-card h-100">
+                        <div class="insight-cover">
+                            <img src="assets/images/business/metal-recycling-3.webp" alt="如何识别金属纯度 - B端采购快速鉴别指南" loading="lazy">
+                            <span class="insight-badge bg-success">技术指南</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="insight-meta text-muted small mb-2">
+                                <span><i class="far fa-calendar-alt me-1"></i>2026-04-15</span>
+                                <span class="ms-3"><i class="far fa-clock me-1"></i>6 分钟阅读</span>
+                            </div>
+                            <h5 class="card-title">
+                                <a href="articles/metal-purity-identification-guide.html" class="stretched-link text-decoration-none text-dark">如何识别金属纯度：B 端采购的快速鉴别指南</a>
+                            </h5>
+                            <p class="card-text text-muted small mt-2">从外观特征到 XRF 光谱检测，掌握铜、铝、不锈钢等核心工业金属的现场快速识别方法，避免按低品位错收。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 文章 2：拆除安全 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <article class="card insight-card h-100">
+                        <div class="insight-cover">
+                            <img src="assets/images/business/steel-demolition-1.webp" alt="拆除工程中的安全风险规避方案" loading="lazy">
+                            <span class="insight-badge bg-warning text-dark">安全规范</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="insight-meta text-muted small mb-2">
+                                <span><i class="far fa-calendar-alt me-1"></i>2026-04-22</span>
+                                <span class="ms-3"><i class="far fa-clock me-1"></i>8 分钟阅读</span>
+                            </div>
+                            <h5 class="card-title">
+                                <a href="articles/demolition-safety-risk-management.html" class="stretched-link text-decoration-none text-dark">钢结构拆除工程中的安全风险规避方案</a>
+                            </h5>
+                            <p class="card-text text-muted small mt-2">高空作业、临时支撑失稳、坠物伤人 — 拆除项目六大高频事故场景的预防清单与应急预案模板。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 文章 3：合规处理 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <article class="card insight-card h-100">
+                        <div class="insight-cover">
+                            <img src="assets/images/business/appliance-recycling-2.webp" alt="企业废弃物合规处理指南" loading="lazy">
+                            <span class="insight-badge bg-info">合规指南</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="insight-meta text-muted small mb-2">
+                                <span><i class="far fa-calendar-alt me-1"></i>2026-04-29</span>
+                                <span class="ms-3"><i class="far fa-clock me-1"></i>7 分钟阅读</span>
+                            </div>
+                            <h5 class="card-title">
+                                <a href="articles/enterprise-waste-compliance-guide.html" class="stretched-link text-decoration-none text-dark">企业废弃物合规处理指南：从分类到凭证全流程</a>
+                            </h5>
+                            <p class="card-text text-muted small mt-2">一般固废 vs 危废如何区分？转移联单、回收凭证、销毁证明该向谁要？10 步给企业 EHS / 行政部门一份合规交付清单。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 文章 4：价格趋势 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <article class="card insight-card h-100">
+                        <div class="insight-cover">
+                            <img src="assets/images/business/metal-recycling-2.webp" alt="2026年度废钢及金属价格趋势分析" loading="lazy">
+                            <span class="insight-badge bg-primary">趋势分析</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="insight-meta text-muted small mb-2">
+                                <span><i class="far fa-calendar-alt me-1"></i>2026-05-06</span>
+                                <span class="ms-3"><i class="far fa-clock me-1"></i>10 分钟阅读</span>
+                            </div>
+                            <h5 class="card-title">
+                                <a href="articles/2026-scrap-metal-price-trends.html" class="stretched-link text-decoration-none text-dark">2026 年度废钢及主要金属价格趋势分析报告</a>
+                            </h5>
+                            <p class="card-text text-muted small mt-2">基于上海期货所、长江有色、Mysteel 数据，剖析废钢、铜、铝、不锈钢全年价格区间与库存释放节奏，给采购方提供处置时机建议。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+                <p class="text-muted mb-3">每月发布企业级再生资源管理深度内容</p>
+                <a href="#contact" class="btn btn-outline-success btn-lg">
+                    <i class="fas fa-envelope-open-text me-2"></i>订阅更多行业内容
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- 联系我们 -->
     <section id="contact" class="section">
         <div class="container">
@@ -802,9 +1087,9 @@
                                     <label for="recycleType" class="form-label">回收类型 <span class="text-danger">*</span></label>
                                     <select class="form-select" id="recycleType" name="回收类型" required>
                                         <option value="">请选择回收类型</option>
-                                        <option value="废旧金属">废旧金属</option>
-                                        <option value="二手电器">二手电器</option>
-                                        <option value="珠宝首饰">珠宝首饰</option>
+                                        <option value="生产性废旧金属">生产性废旧金属</option>
+                                        <option value="企业IT资产/办公设备报废">企业IT资产 / 办公设备报废</option>
+                                        <option value="工业贵金属提取">工业贵金属提取</option>
                                         <option value="废旧机械">废旧机械</option>
                                         <option value="再生资源">再生资源</option>
                                         <option value="钢结构拆除">钢结构拆除</option>
@@ -948,26 +1233,26 @@
                     </div>
                 </div>
                 
-                <!-- 业务范围和公司信息 -->
-                <div class="col-lg-5 col-md-6 ms-auto">
+                <!-- 业务范围 / 公司信息 / 行业洞察 -->
+                <div class="col-lg-8 col-md-6 ms-auto">
                     <div class="row">
                         <!-- 业务范围 -->
-                        <div class="col-lg-6 col-md-6 col-6">
+                        <div class="col-lg-4 col-md-6 col-6">
                             <div class="footer-widget text-start">
                                 <h6 class="footer-title mb-3">业务范围</h6>
                                 <ul class="footer-links list-unstyled">
-                                    <li><a href="#business" class="text-white-50">废旧金属回收</a></li>
-                                    <li><a href="#business" class="text-white-50">二手电器回收</a></li>
-                                    <li><a href="#business" class="text-white-50">珠宝首饰回收</a></li>
+                                    <li><a href="#business" class="text-white-50">生产性废旧金属回收</a></li>
+                                    <li><a href="#business" class="text-white-50">企业IT资产 / 办公设备报废</a></li>
+                                    <li><a href="#business" class="text-white-50">工业贵金属材料提取</a></li>
                                     <li><a href="#business" class="text-white-50">废旧机械回收</a></li>
                                     <li><a href="#business" class="text-white-50">再生资源回收</a></li>
                                     <li><a href="#business" class="text-white-50">钢结构拆除</a></li>
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <!-- 公司信息 -->
-                        <div class="col-lg-6 col-md-6 col-6">
+                        <div class="col-lg-4 col-md-6 col-6">
                             <div class="footer-widget text-start">
                                 <h6 class="footer-title mb-3">公司信息</h6>
                                 <ul class="footer-links list-unstyled">
@@ -977,6 +1262,20 @@
                                     <li><a href="#certificates" class="text-white-50">企业资质</a></li>
                                     <li><a href="#" class="text-white-50">服务承诺</a></li>
                                     <li><a href="#" class="text-white-50">隐私政策</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 行业洞察 -->
+                        <div class="col-lg-4 col-md-12 col-12 mt-md-3 mt-lg-0">
+                            <div class="footer-widget text-start">
+                                <h6 class="footer-title mb-3">行业洞察</h6>
+                                <ul class="footer-links list-unstyled">
+                                    <li><a href="articles/metal-purity-identification-guide.html" class="text-white-50">金属纯度识别指南</a></li>
+                                    <li><a href="articles/demolition-safety-risk-management.html" class="text-white-50">拆除工程安全方案</a></li>
+                                    <li><a href="articles/enterprise-waste-compliance-guide.html" class="text-white-50">企业废弃物合规处理</a></li>
+                                    <li><a href="articles/2026-scrap-metal-price-trends.html" class="text-white-50">2026 金属价格趋势</a></li>
+                                    <li><a href="#insights" class="text-white-50">查看全部文章 →</a></li>
                                 </ul>
                             </div>
                         </div>
