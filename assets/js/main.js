@@ -24,7 +24,67 @@ const XunXin = {
         this.initLazyLoading();
         this.initBackToTop();
         this.initHeroParticles(); // 初始化粒子效果
+        this.loadDynamicInsights(); // 加载后台发布的文章
         console.log('循鑫（天津）再生资源有限公司网站初始化完成');
+    },
+
+    // 从 /api/articles 加载后台发布的文章并插入行业洞察
+    loadDynamicInsights: function() {
+        const row = document.getElementById('insightsRow');
+        if (!row) return;
+        fetch('/api/articles', { credentials: 'same-origin' })
+            .then(function(res) { return res.ok ? res.json() : null; })
+            .then(function(data) {
+                if (!data || !Array.isArray(data.articles) || data.articles.length === 0) return;
+                const frag = document.createDocumentFragment();
+                data.articles.forEach(function(a, idx) {
+                    const col = document.createElement('div');
+                    col.className = 'col-lg-3 col-md-6';
+                    col.setAttribute('data-aos', 'fade-up');
+                    col.setAttribute('data-aos-delay', String(50 + idx * 50));
+                    col.innerHTML = XunXin.renderInsightCard(a);
+                    frag.appendChild(col);
+                });
+                row.insertBefore(frag, row.firstChild);
+                if (typeof AOS !== 'undefined' && AOS.refresh) AOS.refresh();
+            })
+            .catch(function() { /* silent: degrade gracefully */ });
+    },
+
+    renderInsightCard: function(a) {
+        const safe = function(s) {
+            return String(s == null ? '' : s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        };
+        const title = safe(a.title);
+        const coverRaw = a.coverImage || 'assets/images/business/metal-recycling-1.webp';
+        const cover = safe(coverRaw.startsWith('/') ? coverRaw : '/' + coverRaw);
+        const category = safe(a.category || '行业洞察');
+        const categoryColor = safe(a.categoryColor || 'bg-secondary');
+        const date = safe((a.publishedAt || '').slice(0, 10));
+        const minutes = Number(a.readMinutes) || 6;
+        const subtitle = safe(a.subtitle || a.metaDescription || '');
+        const slug = safe(a.slug);
+        return ''
+            + '<article class="card insight-card h-100">'
+            + '  <div class="insight-cover">'
+            + '    <img src="' + cover + '" alt="' + title + '" loading="lazy">'
+            + '    <span class="insight-badge ' + categoryColor + '">' + category + '</span>'
+            + '  </div>'
+            + '  <div class="card-body d-flex flex-column">'
+            + '    <div class="insight-meta text-muted small mb-2">'
+            + '      <span><i class="far fa-calendar-alt me-1"></i>' + date + '</span>'
+            + '      <span class="ms-3"><i class="far fa-clock me-1"></i>' + minutes + ' 分钟阅读</span>'
+            + '    </div>'
+            + '    <h5 class="card-title">'
+            + '      <a href="/post/' + slug + '" class="stretched-link text-decoration-none text-dark">' + title + '</a>'
+            + '    </h5>'
+            + (subtitle ? '<p class="card-text text-muted small mt-2">' + subtitle + '</p>' : '')
+            + '  </div>'
+            + '</article>';
     },
     
     // 初始化AOS动画
@@ -511,7 +571,7 @@ function submitContactForm() {
             
             // 延迟显示成功提示
             setTimeout(() => {
-                alert('✅ 邮件客户端已打开！\n\n📧 请在邮件中点击"发送"完成提交\n📞 也可直接致电：131 1490 8387\n💬 或添加微信咨询（见下方二维码）');
+                alert('✅ 邮件客户端已打开！\n\n📧 请在邮件中点击"发送"完成提交\n📞 也可直接致电：1355 206 3322\n💬 或添加微信咨询（见下方二维码）');
             }, 500);
             
             // 清空表单
@@ -530,7 +590,7 @@ function submitContactForm() {
 // 显示备选联系方式
 function showAlternativeContact() {
     alert('📞 其他联系方式：\n\n' +
-          '🔥 电话咨询：131 1490 8387\n' +
+          '🔥 电话咨询：1355 206 3322\n' +
           '📧 邮箱联系：xunxin2025@126.com\n' +
           '💬 微信咨询：扫描页面二维码\n' +
           '🏢 公司地址：天津市武清开发区意安广场6号楼408室\n\n' +

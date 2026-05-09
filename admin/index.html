@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循鑫管理后台</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo/横向logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- 登录视图 -->
+    <section id="loginView" class="login-view d-none">
+        <div class="login-card">
+            <img src="/assets/images/logo/横向logo.svg" alt="循鑫" class="login-logo">
+            <h1 class="login-title">管理后台</h1>
+            <p class="login-sub text-muted">请输入管理员密码</p>
+            <form id="loginForm" class="login-form">
+                <input type="password" id="loginPassword" class="form-control form-control-lg" placeholder="密码" autocomplete="current-password" required>
+                <button type="submit" class="btn btn-success btn-lg w-100 mt-3">
+                    <i class="fas fa-sign-in-alt me-2"></i>登录
+                </button>
+                <div id="loginError" class="text-danger small mt-2 d-none"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 主控制台 -->
+    <section id="appView" class="app-view d-none">
+        <header class="admin-topbar">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <a href="/" class="brand text-decoration-none">
+                    <img src="/assets/images/logo/横向logo.svg" alt="循鑫">
+                    <span class="ms-2 d-none d-sm-inline">管理后台</span>
+                </a>
+                <nav class="tabs">
+                    <button class="tab-btn active" data-tab="hero"><i class="fas fa-image me-1"></i>Hero 图</button>
+                    <button class="tab-btn" data-tab="business"><i class="fas fa-th me-1"></i>业务图</button>
+                    <button class="tab-btn" data-tab="articles"><i class="fas fa-newspaper me-1"></i>文章</button>
+                </nav>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="/" target="_blank" class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-external-link-alt me-1"></i>查看官网
+                    </a>
+                    <button id="logoutBtn" class="btn btn-outline-danger btn-sm">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="container-fluid py-4">
+            <!-- Hero 图 -->
+            <section id="tab-hero" class="tab-panel">
+                <div class="panel-head">
+                    <h2 class="panel-title">首页 Hero 轮播图</h2>
+                    <p class="panel-sub text-muted">点击下方任一图片即可上传替换。建议尺寸 1920×1080，WebP/JPEG/PNG，单张不超过 8MB。</p>
+                </div>
+                <div id="heroGrid" class="image-grid hero-grid"></div>
+            </section>
+
+            <!-- 业务图 -->
+            <section id="tab-business" class="tab-panel d-none">
+                <div class="panel-head">
+                    <h2 class="panel-title">业务范围图片</h2>
+                    <p class="panel-sub text-muted">每类业务包含 3 张轮播图。点击图片上传替换。</p>
+                </div>
+                <div id="businessNav" class="biz-nav"></div>
+                <div id="businessGrid" class="image-grid biz-grid"></div>
+            </section>
+
+            <!-- 文章 -->
+            <section id="tab-articles" class="tab-panel d-none">
+                <div class="panel-head d-flex align-items-center justify-content-between flex-wrap gap-2">
+                    <div>
+                        <h2 class="panel-title">行业洞察文章</h2>
+                        <p class="panel-sub text-muted mb-0">这里管理新发布的文章；首页已有的 4 篇老文章为系统内置，不可在此修改。</p>
+                    </div>
+                    <button id="newArticleBtn" class="btn btn-success">
+                        <i class="fas fa-plus me-1"></i>发布新文章
+                    </button>
+                </div>
+
+                <div id="articleList" class="article-list"></div>
+            </section>
+        </main>
+    </section>
+
+    <!-- 文章编辑器 -->
+    <div id="editorOverlay" class="editor-overlay d-none">
+        <div class="editor-panel">
+            <header class="editor-head">
+                <h3 id="editorTitle" class="mb-0">发布新文章</h3>
+                <button id="editorClose" class="btn-close" aria-label="关闭"></button>
+            </header>
+            <div class="editor-body">
+                <div class="row g-3">
+                    <div class="col-md-7">
+                        <label class="form-label">标题 <span class="text-danger">*</span></label>
+                        <input id="f-title" class="form-control" placeholder="例：废铜分级与定价的 5 个关键标准">
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-label">URL slug <span class="text-danger">*</span></label>
+                        <input id="f-slug" class="form-control" placeholder="例：copper-grading-pricing" pattern="[a-z0-9-]+">
+                        <div class="form-text">英文小写、数字、连字符。一旦发布不可更改。</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">副标题（可选）</label>
+                        <input id="f-subtitle" class="form-control" placeholder="一句话概括，会显示在标题下方">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">分类 <span class="text-danger">*</span></label>
+                        <select id="f-category" class="form-select"></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">发布日期</label>
+                        <input id="f-publishedAt" type="date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">阅读分钟数</label>
+                        <input id="f-readMinutes" type="number" min="1" max="60" class="form-control" placeholder="自动估算">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">封面图</label>
+                        <div id="coverPicker" class="cover-picker"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">SEO 描述（可选，140 字内）</label>
+                        <textarea id="f-metaDescription" class="form-control" rows="2" maxlength="200"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">SEO 关键词（可选，逗号分隔）</label>
+                        <input id="f-metaKeywords" class="form-control" placeholder="废铜,工业回收,B2B采购">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">正文（Markdown） <span class="text-danger">*</span></label>
+                        <div class="editor-grid">
+                            <textarea id="f-bodyMarkdown" class="form-control" rows="22" placeholder="支持 # 标题、**粗体**、*斜体*、- 列表、1. 编号、> 引用、--- 分隔线、[链接](https://...)"></textarea>
+                            <div id="preview" class="markdown-preview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="editor-foot">
+                <div class="text-muted small me-auto" id="editorStatus"></div>
+                <button id="editorPreviewBtn" class="btn btn-outline-secondary"><i class="fas fa-eye me-1"></i>预览刷新</button>
+                <button id="editorSaveBtn" class="btn btn-success"><i class="fas fa-paper-plane me-1"></i>发布</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast-msg d-none"></div>
+
+    <script src="admin.js" defer></script>
+</body>
+</html>
