@@ -1,60 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://SITE_URL/</loc>
-    <changefreq>daily</changefreq>
+    <loc>https://www.xunxinai.com/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/index.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://SITE_URL/articles/metal-purity-identification-guide.html</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://www.xunxinai.com/articles/metal-purity-identification-guide.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/articles/demolition-safety-risk-management.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <loc>https://www.xunxinai.com/articles/demolition-safety-risk-management.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/articles/enterprise-waste-compliance-guide.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <loc>https://www.xunxinai.com/articles/enterprise-waste-compliance-guide.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/articles/2026-scrap-metal-price-trends.html</loc>
-    <lastmod>2026-05-06</lastmod>
+    <loc>https://www.xunxinai.com/articles/2026-scrap-metal-price-trends.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/articles/beijing-steel-demolition-zero-landfill-compliance.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.xunxinai.com/articles/beijing-steel-demolition-zero-landfill-compliance.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/articles/tianjin-industrial-park-jit-metal-recycling.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.xunxinai.com/articles/tianjin-industrial-park-jit-metal-recycling.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/articles/enterprise-it-asset-data-destruction-guide.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://www.xunxinai.com/articles/enterprise-it-asset-data-destruction-guide.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://SITE_URL/articles/industrial-precious-metals-transparent-pricing.html</loc>
-    <lastmod>2026-05-20</lastmod>
+    <loc>https://www.xunxinai.com/articles/industrial-precious-metals-transparent-pricing.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
