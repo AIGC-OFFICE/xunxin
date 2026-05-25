@@ -6,26 +6,24 @@ const XunXin = {
     config: {
         navbarScrollOffset: 100,
         animationDuration: 800,
-        contactFormEndpoint: '', // 后续配置
-        phoneNumber: '', // 后续配置
+        contactPhone: '13552063322',
+        contactEmail: 'xunxin2025@126.com',
         mapConfig: {
             center: [100.0, 35.0], // 全国中心坐标
             zoom: 5
         }
     },
-    
+
     // 初始化函数
     init: function() {
         this.initAOS();
         this.initNavbar();
         this.initSectionHighlight(); // 激活板块高亮
         this.initSmoothScroll();
-        this.initContactForm();
         this.initLazyLoading();
         this.initBackToTop();
         this.initHeroParticles(); // 初始化粒子效果
         this.loadDynamicInsights(); // 加载后台发布的文章
-        console.log('循鑫（天津）再生资源有限公司网站初始化完成');
     },
 
     // 从 /api/articles 加载后台发布的文章并插入行业洞察
@@ -184,141 +182,6 @@ const XunXin = {
         navLinks.forEach(link => {
             link.addEventListener('click', () => setTimeout(() => updateActive(), 300));
         });
-    },
-    
-    // 联系表单处理
-    initContactForm: function() {
-        const contactForm = document.getElementById('contactForm');
-        if (!contactForm) return;
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // 使用原有的mailto方案
-            submitContactForm();
-        });
-        
-        // 实时验证
-        const inputs = contactForm.querySelectorAll('input, textarea, select');
-        inputs.forEach(input => {
-            input.addEventListener('blur', () => {
-                this.validateField(input);
-            });
-            
-            input.addEventListener('input', () => {
-                if (input.classList.contains('is-invalid')) {
-                    this.validateField(input);
-                }
-            });
-        });
-    },
-    
-    // Formspree 表单提交处理
-    handleFormspreeSubmit: function(form) {
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        // 验证所有字段
-        const isValid = this.validateForm(form);
-        if (!isValid) return;
-        
-        // 显示提交状态
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>提交中...';
-        
-        // 获取表单数据
-        const formData = new FormData(form);
-        
-        // 使用fetch提交到Formspree
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                this.showAlert('success', '提交成功！我们已收到您的咨询，会尽快与您联系。');
-                form.reset();
-                form.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
-            } else {
-                response.json().then(data => {
-                    if (Object.hasOwnProperty.call(data, 'errors')) {
-                        this.showAlert('danger', '提交失败：' + data['errors'].map(error => error['message']).join(', '));
-                    } else {
-                        this.showAlert('danger', '提交失败，请稍后重试或直接致电联系我们。');
-                    }
-                });
-            }
-        })
-        .catch(error => {
-            console.error('提交错误:', error);
-            this.showAlert('danger', '网络错误，请检查网络连接后重试。');
-        })
-        .finally(() => {
-            // 恢复按钮状态
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-        });
-    },
-    
-    // 表单验证
-    validateForm: function(form) {
-        const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-        let isValid = true;
-        
-        inputs.forEach(input => {
-            if (!this.validateField(input)) {
-                isValid = false;
-            }
-        });
-        
-        return isValid;
-    },
-    
-    // 字段验证
-    validateField: function(field) {
-        const value = field.value.trim();
-        const type = field.type;
-        let isValid = true;
-        let message = '';
-        
-        // 必填验证
-        if (field.hasAttribute('required') && !value) {
-            isValid = false;
-            message = '此字段为必填项';
-        }
-        
-        // 特定类型验证
-        if (value && type === 'email') {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(value)) {
-                isValid = false;
-                message = '请输入有效的邮箱地址';
-            }
-        }
-        
-        if (value && type === 'tel') {
-            const phoneRegex = /^1[3-9]\d{9}$/;
-            if (!phoneRegex.test(value)) {
-                isValid = false;
-                message = '请输入有效的手机号码';
-            }
-        }
-        
-        // 更新UI状态
-        field.classList.remove('is-valid', 'is-invalid');
-        const feedback = field.parentNode.querySelector('.invalid-feedback');
-        
-        if (isValid) {
-            field.classList.add('is-valid');
-            if (feedback) feedback.textContent = '';
-        } else {
-            field.classList.add('is-invalid');
-            if (feedback) feedback.textContent = message;
-        }
-        
-        return isValid;
     },
     
     // 显示提示信息
@@ -526,73 +389,3 @@ window.addEventListener('load', () => {
 
     // 导出到全局
 window.XunXin = XunXin;
-
-// 新的表单提交函数（使用mailto方案）
-function submitContactForm() {
-    console.log('submitContactForm called'); // 调试信息
-    
-    const name = document.getElementById('contactName').value;
-    const phone = document.getElementById('contactPhone').value;
-    const email = document.getElementById('contactEmail').value;
-    const recycleType = document.getElementById('recycleType').value;
-    const message = document.getElementById('contactMessage').value;
-    
-    console.log('Form data:', { name, phone, email, recycleType, message }); // 调试信息
-    
-    // 验证必填字段
-    if (!name || !phone || !recycleType) {
-        alert('请填写所有必填字段！');
-        return;
-    }
-    
-    // 构建邮件内容
-    const subject = '循鑫（天津）再生资源有限公司 - 新的咨询表单';
-    const body = `姓名：${name}
-联系电话：${phone}
-邮箱地址：${email || '未提供'}
-回收类型：${recycleType}
-详细描述：${message || '无'}
-
-提交时间：${new Date().toLocaleString('zh-CN')}`;
-    
-    // 生成mailto链接
-    const mailtoUrl = `mailto:xunxin2025@126.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // 显示提交确认对话框
-    const confirmSubmit = confirm('您的咨询信息已准备就绪！\n\n点击「确定」将打开邮件客户端发送咨询\n点击「取消」查看其他联系方式\n\n咨询内容：\n' + 
-        `姓名：${name}\n` +
-        `电话：${phone}\n` +
-        `回收类型：${recycleType}`);
-    
-    if (confirmSubmit) {
-        try {
-            // 尝试打开邮件客户端
-            window.open(mailtoUrl, '_blank');
-            
-            // 延迟显示成功提示
-            setTimeout(() => {
-                alert('✅ 邮件客户端已打开！\n\n📧 请在邮件中点击"发送"完成提交\n📞 也可直接致电：1355 206 3322\n💬 或添加微信咨询（见下方二维码）');
-            }, 500);
-            
-            // 清空表单
-            document.getElementById('contactForm').reset();
-            
-        } catch (error) {
-            console.error('邮件打开失败:', error);
-            showAlternativeContact();
-        }
-    } else {
-        // 用户选择查看其他联系方式
-        showAlternativeContact();
-    }
-}
-
-// 显示备选联系方式
-function showAlternativeContact() {
-    alert('📞 其他联系方式：\n\n' +
-          '🔥 电话咨询：1355 206 3322\n' +
-          '📧 邮箱联系：xunxin2025@126.com\n' +
-          '💬 微信咨询：扫描页面二维码\n' +
-          '🏢 公司地址：天津市武清开发区意安广场6号楼408室\n\n' +
-          '⏰ 工作时间：8:00-18:00（全年无休）');
-}

@@ -1025,11 +1025,11 @@
                     <h4 class="mb-3">马上开始您的回收服务！</h4>
                     <p class="text-muted mb-4">只需一个电话，我们为您提供专业、快捷的回收服务</p>
                     <div class="cta-buttons">
-                        <a href="tel:" class="btn btn-success btn-lg me-3 mb-2" onclick="XunXin.callPhone('待添加')">
-                            <i class="fas fa-phone me-2"></i>立即拨打
+                        <a href="tel:13552063322" class="btn btn-success btn-lg me-3 mb-2" onclick="XunXin.callPhone('13552063322')">
+                            <i class="fas fa-phone me-2"></i>立即拨打 1355 206 3322
                         </a>
                         <a href="#contact" class="btn btn-outline-primary btn-lg mb-2">
-                            <i class="fas fa-envelope me-2"></i>在线咨询
+                            <i class="fab fa-weixin me-2"></i>微信咨询
                         </a>
                     </div>
                 </div>
@@ -1345,149 +1345,65 @@
                 <p class="subtitle">有回收需求？欢迎随时联系，我们将第一时间为您提供专业服务</p>
             </div>
             
-            <div class="row g-5">
-                <!-- 联系表单 -->
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="contact-form-container">
-                        <h4 class="mb-4">在线咨询</h4>
-                        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xunxin2025@126.com" method="POST">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="contactName" class="form-label">姓名 <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="contactName" name="姓名" required>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="contactPhone" class="form-label">联系电话 <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" id="contactPhone" name="联系电话" required>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="contactEmail" class="form-label">邮箱地址</label>
-                                    <input type="email" class="form-control" id="contactEmail" name="邮箱地址">
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="recycleType" class="form-label">回收类型 <span class="text-danger">*</span></label>
-                                    <select class="form-select" id="recycleType" name="回收类型" required>
-                                        <option value="">请选择回收类型</option>
-                                        <option value="生产性废旧金属">生产性废旧金属</option>
-                                        <option value="企业IT资产/办公设备报废">企业IT资产 / 办公设备报废</option>
-                                        <option value="工业贵金属提取">工业贵金属提取</option>
-                                        <option value="废旧机械">废旧机械</option>
-                                        <option value="再生资源">再生资源</option>
-                                        <option value="钢结构拆除">钢结构拆除</option>
-                                        <option value="其他">其他</option>
-                                    </select>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="contactMessage" class="form-label">详细描述</label>
-                                    <textarea class="form-control" id="contactMessage" name="详细描述" rows="8" placeholder="请描述您的回收需求，如物品类型、数量、位置等信息"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <!-- Formspree 防止机器人验证 -->
-                                    <input type="hidden" name="_captcha" value="false">
-                                    <!-- 自定义成功页面 -->
-                                    <input type="hidden" name="_next" value="#contact">
-                                    <!-- 自定义邮件主题 -->
-                                    <input type="hidden" name="_subject" value="循鑫（天津）再生资源有限公司 - 新的咨询表单">
-                                    
-                                    <button type="submit" class="btn btn-success btn-lg w-100">
-                                        <i class="fas fa-paper-plane me-2"></i>提交咨询
-                                    </button>
-                                </div>
+            <div class="row g-4 justify-content-center">
+                <!-- 一键拨号 主入口 -->
+                <div class="col-lg-7" data-aos="fade-up">
+                    <div class="contact-info p-4 p-md-5 bg-white rounded-3 shadow-sm h-100">
+                        <div class="text-center mb-4">
+                            <div class="contact-icon mx-auto mb-3" style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: rgba(25, 135, 84, 0.1); border-radius: 50%;">
+                                <i class="fas fa-phone fa-2x text-success"></i>
                             </div>
-                        </form>
+                            <h4 class="mb-2">咨询热线</h4>
+                            <p class="text-muted small mb-3">工作时间 8:00-18:00（全年无休）· 上门看货、现场报价</p>
+                            <a href="tel:13552063322" class="btn btn-success btn-lg w-100 mb-2" onclick="XunXin.callPhone('13552063322')" aria-label="一键拨打咨询电话 1355 206 3322">
+                                <i class="fas fa-phone me-2"></i>一键拨打 1355 206 3322
+                            </a>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="XunXin.copyToClipboard('13552063322')" aria-label="复制电话号码">
+                                <i class="fas fa-copy me-1"></i>复制号码
+                            </button>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <!-- 邮箱兜底 -->
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="contact-icon me-3" style="flex-shrink: 0;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">邮箱咨询（兜底）</h6>
+                                <a href="mailto:xunxin2025@126.com" class="text-decoration-none">xunxin2025@126.com</a>
+                                <button class="btn btn-sm btn-outline-secondary ms-2" onclick="XunXin.copyToClipboard('xunxin2025@126.com')" aria-label="复制邮箱地址">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 公司地址 -->
+                        <div class="d-flex align-items-start">
+                            <div class="contact-icon me-3" style="flex-shrink: 0;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">公司地址</h6>
+                                <p class="mb-0 text-muted">天津市武清开发区意安广场6号楼408室</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- 联系信息 -->
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="contact-info">
-                        <h4 class="mb-4">联系方式</h4>
-                        
-                        <!-- 电话联系 -->
-                        <div class="contact-item mb-4">
-                            <div class="d-flex align-items-center">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h6>咨询热线</h6>
-                                    <p class="mb-1">
-                                        <a href="tel:13552063322" class="text-decoration-none" onclick="XunXin.callPhone('13552063322')">1355 206 3322</a>
-                                        <button class="btn btn-sm btn-outline-secondary ms-2" onclick="XunXin.copyToClipboard('13552063322')">
-                                            <i class="fas fa-copy"></i>
-                                        </button>
-                                    </p>
-                                    <small class="text-muted">工作时间：8:00-18:00（全年无休）</small>
-                                </div>
-                            </div>
+
+                <!-- 微信二维码 -->
+                <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info p-4 p-md-5 bg-white rounded-3 shadow-sm h-100 text-center d-flex flex-column">
+                        <div class="contact-icon mx-auto mb-3" style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: rgba(25, 135, 84, 0.1); border-radius: 50%;">
+                            <i class="fab fa-weixin fa-2x text-success"></i>
                         </div>
-                        
-                        <!-- 地址信息 -->
-                        <div class="contact-item mb-4">
-                            <div class="d-flex align-items-start">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h6>公司地址</h6>
-                                    <p class="mb-1">天津市武清开发区意安广场6号楼408室</p>
-                                </div>
-                            </div>
+                        <h4 class="mb-2">微信咨询</h4>
+                        <p class="text-muted small mb-3">扫码加微信 · 发图片视频更直观 · 询价、上门时间即时确认</p>
+                        <div class="my-auto py-3">
+                            <img src="assets/images/business/微信二维码.png" alt="循鑫（天津）再生资源 微信二维码" class="img-fluid rounded shadow-sm" style="max-width: 220px;">
                         </div>
-                        
-                        <!-- 邮箱联系 -->
-                        <div class="contact-item mb-4">
-                            <div class="d-flex align-items-center">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h6>邮箱地址</h6>
-                                    <p class="mb-1">
-                                        <a href="mailto:xunxin2025@126.com" class="text-decoration-none">xunxin2025@126.com</a>
-                                        <button class="btn btn-sm btn-outline-secondary ms-2" onclick="XunXin.copyToClipboard('xunxin2025@126.com')">
-                                            <i class="fas fa-copy"></i>
-                                        </button>
-                                    </p>
-                                    <small class="text-muted">欢迎邮件咨询，工作时间内快速回复</small>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- 微信二维码 -->
-                        <div class="contact-item mb-4">
-                            <div class="d-flex align-items-start">
-                                <div class="contact-icon">
-                                    <i class="fab fa-weixin"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h6>微信咨询</h6>
-                                    <div class="qr-code-placeholder">
-                                        <img src="assets/images/business/微信二维码.png" alt="微信二维码" class="img-fluid" style="max-width: 150px;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- 快捷操作 -->
-                        <div class="quick-actions mt-4">
-                            <h6 class="mb-3">快捷操作</h6>
-                            <div class="d-flex flex-wrap gap-2">
-                                <button class="btn btn-outline-success" onclick="XunXin.callPhone('待添加')">
-                                    <i class="fas fa-phone me-1"></i>立即拨打
-                                </button>
-                                <button class="btn btn-outline-primary" onclick="window.open('sms:待添加')">
-                                    <i class="fas fa-sms me-1"></i>发送短信
-                                </button>
-                                <button class="btn btn-outline-info" onclick="window.open('mailto:待添加')">
-                                    <i class="fas fa-envelope me-1"></i>发送邮件
-                                </button>
-                            </div>
-                        </div>
+                        <p class="text-muted small mb-0 mt-2">长按二维码识别 / 微信扫一扫</p>
                     </div>
                 </div>
             </div>
