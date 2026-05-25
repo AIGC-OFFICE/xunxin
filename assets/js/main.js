@@ -22,7 +22,6 @@ const XunXin = {
         this.initSmoothScroll();
         this.initLazyLoading();
         this.initBackToTop();
-        this.initHeroParticles(); // 初始化粒子效果
         this.loadDynamicInsights(); // 加载后台发布的文章
     },
 
@@ -321,50 +320,6 @@ const XunXin = {
         showButton();
     },
     
-    // 初始化英雄横幅粒子效果
-    initHeroParticles: function() {
-        const particlesContainer = document.querySelector('.hero-particles');
-        if (!particlesContainer) return;
-        
-        // 创建粒子
-        const particleCount = 30;
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.cssText = `
-                position: absolute;
-                width: ${Math.random() * 5 + 2}px;
-                height: ${Math.random() * 5 + 2}px;
-                background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3});
-                border-radius: 50%;
-                top: ${Math.random() * 100}%;
-                left: ${Math.random() * 100}%;
-                animation: float ${Math.random() * 10 + 10}s infinite ease-in-out;
-                animation-delay: ${Math.random() * 5}s;
-            `;
-            particlesContainer.appendChild(particle);
-        }
-        
-        // 添加CSS动画样式
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0%, 100% {
-                    transform: translate(0, 0) rotate(0deg);
-                }
-                25% {
-                    transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px) rotate(90deg);
-                }
-                50% {
-                    transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px) rotate(180deg);
-                }
-                75% {
-                    transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px) rotate(270deg);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
 };
 
 // DOM加载完成后初始化
