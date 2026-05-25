@@ -446,10 +446,23 @@ html, body { overflow-x: hidden; touch-action: pan-y; }
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    transform-origin: center center;
+    will-change: transform;
+    animation: heroBreathe 8s ease-in-out infinite;
 }
 /* fade 过渡 */
 .hero-carousel.carousel-fade .carousel-item {
     transition: opacity 1.2s ease-in-out;
+}
+/* 英雄栏图片缓慢呼吸（Ken-Burns 微推拉），避免静态僵硬 */
+@keyframes heroBreathe {
+    0%   { transform: scale(1.00); }
+    50%  { transform: scale(1.06); }
+    100% { transform: scale(1.00); }
+}
+/* 尊重无障碍设置：用户系统层关闭动画时不强制呼吸 */
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide { animation: none; }
 }
 /* hero 控件：默认更隐蔽，hover hero 区域时变清晰 */
 .hero-carousel .carousel-control-prev,
